@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -14,16 +14,16 @@ import {
 } from "lucide-react";
 
 // --- Animation Variants ---
-const fadeInUp = {
+const fadeInUp: any = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
-const staggerContainer = {
+const staggerContainer: any = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -31,7 +31,7 @@ const staggerContainer = {
   },
 };
 
-const floatAnimation = {
+const floatAnimation: any = {
   animate: {
     y: [0, -10, 0],
     transition: {
@@ -69,12 +69,12 @@ const Navbar = () => (
     </div>
 
     <div className="flex items-center gap-4">
-      <button className="hidden sm:block text-sm font-medium text-zinc-950 hover:text-zinc-600 transition-colors">
+      <Link to="/login" className="hidden sm:block text-sm font-medium text-zinc-950 hover:text-zinc-600 transition-colors">
         Log in
-      </button>
-      <button className="bg-zinc-950 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-800 transition-colors">
+      </Link>
+      <Link to="/register" className="bg-zinc-950 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-800 transition-colors">
         Apply Now — It's Free
-      </button>
+      </Link>
     </div>
   </nav>
 );
@@ -150,9 +150,9 @@ const Hero = () => (
           variants={fadeInUp}
           className="flex flex-wrap items-center gap-4"
         >
-          <button className="bg-zinc-950 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-zinc-800 transition-colors">
+          <Link to="/register" className="bg-zinc-950 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-zinc-800 transition-colors">
             Apply Now — It's Free
-          </button>
+          </Link>
           <button className="bg-transparent border border-zinc-300 text-zinc-950 px-8 py-4 rounded-full text-sm font-medium hover:border-zinc-950 transition-colors">
             Our Process
           </button>
