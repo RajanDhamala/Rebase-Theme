@@ -3,7 +3,11 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import UserRouter from "./src/Routes/UserRoute.js";
+<<<<<<< HEAD
 import ConflictRouter form "./src/Routes/ConflictRoute.js"
+=======
+import ConflictRouter from "./src/Routes/UserRoute.js"
+>>>>>>> 0c09b1e (trying to create conflict)
 
 dotenv.config();
 const app = express();
@@ -25,7 +29,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/users", UserRouter);
-app.use("/conflict",ConflictRouter)
+app.use("/conflict", ConflictRouter)
 
 app.use((err, req, res, next) => {
   const statusCode = Number.isInteger(err.statusCode) ? err.statusCode : 500;
