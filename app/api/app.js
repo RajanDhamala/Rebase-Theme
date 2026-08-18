@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import UserRouter from "./src/Routes/UserRoute.js";
+import ConflictRouter form "./src/Routes/ConflictRoute.js"
 
 dotenv.config();
 const app = express();
@@ -24,6 +25,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/users", UserRouter);
+app.use("/conflict",ConflictRouter)
 
 app.use((err, req, res, next) => {
   const statusCode = Number.isInteger(err.statusCode) ? err.statusCode : 500;
